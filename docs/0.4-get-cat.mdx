@@ -1,0 +1,132 @@
+---
+name: 4 - Get Cat
+menu: Tinder For Cats
+route: /tinder-for-cats/call-the-api
+---
+
+import Code from '../components/code'
+
+# Get New Cat on Page Load
+
+## The API
+
+For this application we will be using a free API that delivers us images of cats on demand [https://www.catis.life](https://www.catis.life)
+
+The only endpoint we care about is the `/cat` that will give us a random cat for each API call we make.
+
+[https://www.catis.life/cat](https://www.catis.life/cat)
+
+## Call this API
+
+For this we are going to use the [fetch API](https://developers.google.com/web/updates/2015/03/introduction-to-fetch) and get our data from the API we said at the top. So let's create a function to do that in our `index.js`
+
+<Code
+  code={`
+const App = () => {
+  const getCat = () => {
+    const url = 'https://catis.life/cat'
+    setCurrentCat(null)
+\n
+    fetch(url)
+      .then(rsp => rsp.json())
+      .then(data => setCurrentCat(data.cat))
+  }
+\n
+....
+}
+`}
+/>
+
+What we did here is that we create a function using the arrow syntax state of our application inside of it.
+
+<Code
+  code={`
+    fetch(url)
+      .then(rsp => rsp.json())
+      .then(data => setCurrentCat(data.cat))
+`}
+/>
+
+After we call the fetch we then transform what we receive to json to use it better in our app and once that is done we use a function called setState.
+
+What this function does is that is changes the state of our component and in this case the component is our whole App.
+
+But as you can see we have no `setCurrentCat` defined.
+
+To add state to our file add this before the `getCat` function:
+
+<Code
+  code={`
+    const [currentCat, setCurrentCat] = useState(null)
+`}
+/>
+
+We should also tell Javascript to import `useState` from React and we do that by changing our React import to:
+
+<Code
+  code={`
+import React, { useState, useEffect } from 'react'
+`}
+/>
+
+This will tell React that it should start with that part of the state as null and we will manipulate it later and we do it by assigning it to the image url we get from the API.
+
+## Call the `getCat` on page load
+
+So we have a function but so far we are not actually calling it anywhere so we don't actually have that cat image url.
+
+This is why we imported effect, these effects are meant to be run in several parts of the react component lifecycle.
+
+The syntax is like this:
+
+<Code
+  code={`
+  useEffect(() => {
+    // function to run
+  }, [/* Dependencies */])
+`}
+/>
+
+By dependencies I mean what values need to change in order for this effect to run again. In our case we want to this effect to run when the page loads so we can set it as an empty array:
+
+<Code
+  code={`
+  useEffect(() => {
+    getCat()
+  }, [])
+`}
+/>
+
+> Leaving out the second parameter out of the function would tell react to run this function everytime there was a change in our component
+
+## Updating the render
+
+Now that we have the photo in our state we can render that instead of our static image.
+
+Right now we have this:
+
+<Code
+  language="markup"
+  code={`
+<img
+  className="cat-image"
+  src="https://catis.life/placeholder/400"
+  alt="An awesome cat"
+/>
+  `}
+/>
+
+But we want to substitute the src with a variable from the state so we need to interpolate and in React we do that by wrapping the property value in `{}`.
+
+<Code
+  language="markup"
+  code={`
+<img
+  className="cat-image"
+  src={currentCat}
+  alt="An awesome cat"
+/>
+  `}
+/>
+
+You should now have a new cat being loaded every time you load the page 🎉

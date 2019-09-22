@@ -1,0 +1,59 @@
+---
+name: 1 - Set Up
+menu: Tinder For Cats
+route: /tinder-for-cats/set-up
+---
+
+import Code from '../components/code'
+
+# Set Up
+
+| Project Goal              | Make an awesome React App                                                                |
+| ------------------------- | ---------------------------------------------------------------------------------------- |
+| What you’ll learn         | Create a React App that will get data from an API and change it locally                  |
+| Tools you’ll need         | A modern browser like Chrome or Firefox. Access to [CodeSandbox](https://codesandbox.io) |
+| Just want to try the app? | [CodeSandbox link](https://codesandbox.io/s/github/SaraVieira/workshop-one-components)   |
+
+## Create a new Sandbox
+
+We will start from scratch in CodeSandbox so let's start by creating a new React Sandbox and you can do this by clicking [here](https://codesandbox.io/s/new)
+
+## The code
+
+When creating a new Sandbox we get a `index.js` with the following code:
+
+<Code
+  code={`
+import React from "react";
+import ReactDOM from "react-dom";
+\n
+import "./styles.css";
+\n
+function App() {
+  return (
+    <div className="App">
+      <h1>Hello CodeSandbox</h1>
+      <h2>Start editing to see some magic happen!</h2>
+    </div>
+  );
+}
+\n
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
+`}
+/>
+
+Going piece by piece we first import `react` and `react-dom`. We use React to define our components and ReactDOM to actually show them in the DOM.
+
+The DOM is what the browser shows on the screen. In these two lines:
+
+<Code
+  code={`
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
+`}
+/>
+
+We are telling ReactDOM to render the [JSX](https://reactjs.org/docs/introducing-jsx.html) we generated in our function and attach it to the DOM so we can see it in our page.So simply ReactDOM here decides where you should render the JSX which should be shown on the UI. You can think of JSX as being similar to HTML, the biggest difference is that we use `className` instead of `class`.
+
+JSX is nothing more than Javascript disguised in form of HTML.To know more about how React internally converts the JSX to Javascript object. Checkout this [link](https://bit.ly/2RfpnO6).

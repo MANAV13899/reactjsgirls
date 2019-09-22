@@ -1,0 +1,66 @@
+{
+  "projectName": "reactjsgirls-docs",
+  "projectOwner": "ReactJSGirls",
+  "contributors": [
+    {
+      "login": "SaraVieira",
+      "name": "Sara Vieira",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1051509?v=4",
+      "profile": "http://iamsaravieira.com",
+      "contributions": [
+        "code",
+        "design",
+        "doc",
+        "tutorial"
+      ]
+    },
+    {
+      "login": "gaearon",
+      "name": "Dan Abramov",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/810438?v=4",
+      "profile": "http://twitter.com/dan_abramov",
+      "contributions": [
+        "question",
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "lovinglyy",
+      "name": "Lovingly",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/42682205?v=4",
+      "profile": "https://github.com/lovinglyy",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "aimenbatool",
+      "name": "Sayeda Aimen Batool",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/13648547?v=4",
+      "profile": "http://aimenbatool.com/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "rodrigodata",
+      "name": "Rodrigo Andrade",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3861203?v=4",
+      "profile": "http://rodrigoandrade.me",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "halitogunc",
+      "name": "Halit Ogunc",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/13641726?v=4",
+      "profile": "http://www.halitogunc.com/",
+      "contributions": [
+        "bug"
+      ]
+    }
+  ],
+  "repoType": "github"
+}
